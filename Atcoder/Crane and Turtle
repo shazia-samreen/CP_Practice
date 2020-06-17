@@ -1,0 +1,11 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  int n,l;
+  cin>>n;
+  cin>>l;
+  int max=n*4;
+  int min=n*2;
+  if(l%2==0 && (l>=min && l<=max))printf("Yes");
+  else printf("No");
+}
