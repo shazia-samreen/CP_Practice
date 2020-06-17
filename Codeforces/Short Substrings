@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        string str;
+        cin>>str;
+        char dup[1000];
+        dup[0]=str[0];
+        int k1=1;
+        for(int i=1;i<str.length();i+=2){
+                dup[k1]=str[i];
+                k1++;
+        }
+        dup[k1]='\0';
+        string ans(dup);
+        cout<<ans<<'\n';
+    }
+    return 0;
+}
