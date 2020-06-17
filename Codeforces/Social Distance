@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n,k;
+        cin>>n>>k;
+        string str;
+        cin>>str;
+        //cout<<str<<'\n';
+        int count=0;
+        for(int i=0;i<n;i++){
+            //printf("i becoming %d\n",i);
+            if(str[i]=='0'){
+                //printf("i becoming %d and has 0 there\n",i);
+                int firstone=-1;
+                int flag=0;
+                    for(int j=i+1;j<=i+k && j<n;j++){
+                        if(str[j]=='1'){
+                            //printf("one violating in string %s at index %d and original index is %d\n",str,j,i);
+                            firstone=j;
+                            flag=1;
+                        }
+                    }
+                    if(flag==0){
+                        str[i]=1;
+                        i=i+k;
+                        count++;
+                    }else{
+                       if(firstone!=-1)i=firstone+k; 
+                    }
+            }else{
+                i=i+k;
+            }
+        }
+        printf("%d\n",count);
+    }
+    return 0;
+}
