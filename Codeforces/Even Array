@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        int a[1000];
+        int cwr=0,cweven=0,cwodd=0;
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+            if(a[i]%2!=i%2){
+                cwr++;
+                if(i%2==0 && a[i]%2==1){
+                    cwodd++;
+                }else{
+                    cweven++;
+                }
+            }
+        }
+        if(cwr%2==0){
+            if(cwodd==cweven){
+                printf("%d\n",cwodd);
+            }
+            else{
+                printf("-1\n");
+            }
+        }else{
+            printf("-1\n");
+        }
+    }
+    return 0;
+}
