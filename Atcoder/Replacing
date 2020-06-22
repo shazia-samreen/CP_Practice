@@ -1,0 +1,33 @@
+#include<iostream>
+#include<iostream>
+#include<unordered_map>
+
+using namespace std;
+
+int main()
+{
+  int n;
+  cin>>n;
+  int a[n];
+  long long int sum=0;
+  unordered_map<int,int> m;
+  for(int i=0;i<n;i++)
+  {
+    cin>>a[i];
+    m[a[i]]++;
+    sum=sum+a[i];
+  }
+	int q;
+  	cin>>q;
+  	while(q--)
+    {
+      int search,val;
+      cin>>search>>val;
+      if(m[search]!=0){
+       sum=sum-((search-val)*m[search]);
+       m[val]=m[val]+m[search];
+       m[search]=0;
+      }
+      cout<<sum<<"\n";
+    }
+}
